@@ -3,10 +3,7 @@ package convert;
 import java.util.Scanner;
 
 public class Main {
-	public void load() {
-		
-	}
-
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int choise;
@@ -38,6 +35,7 @@ public class Main {
 							System.out.print("\n\n\t\t\t\t\tResult : ");
 							long decimal = bina.toDecimal(binary);
 							System.out.println("\t\t(" + binary + ")2 : ("  + decimal + ")10");
+						
 							break;
 						}
 						case 2:
@@ -165,6 +163,53 @@ public class Main {
 				}while(ch != 4);
 				
 			}else if(choise == 4) {
+				int ch;
+				do {
+					System.out.println("\n\n\t\t\t\t############## WELCOME TO BASE CONVERTER ##############\t\t");
+					System.out.println("\t\t\t\t\t1.Hexadecimal Number(BASE 16) ===> Binary Number(BASE 2) .");
+					System.out.println("\t\t\t\t\t2.Hexadecimal Number(BASE 16) ===> Octal Number(BASE 8).");
+					System.out.println("\t\t\t\t\t3.Hexadecimal Number(BASE 16) ===> Decimal Number(BASE 10).");
+					System.out.println("\t\t\t\t\t4.Exit");
+					System.out.print("\t\t\t\t\tEnter your Choise(1,2,3,4) : ");
+					ch = scan.nextInt();
+					HexaDecimal hexadeci = new HexaDecimal();
+					switch(ch) {
+						case 1:{
+							System.out.print("\t\t\t\t\tEnter the HexaDecimal Number : ");
+							String hexadecimal = scan.next();
+							System.out.print("\n\n\t\t\t\t\tResult : ");
+							long binary = hexadeci.toBinary(hexadecimal);
+							System.out.println("\t\t(" + hexadecimal + ")16 : ("  + binary + ")2");
+							break;
+						}
+						case 2:
+						{
+							System.out.print("\t\t\t\t\tEnter the HexaDecimal Number : ");
+							String hexadecimal = scan.next();
+							System.out.print("\n\n\t\t\t\t\tResult : ");
+							long oct = hexadeci.toOctal(hexadecimal);
+							System.out.println("\t\t(" + hexadecimal + ")16 : (" + oct + ")8");
+							break;
+						}
+						case 3:
+						{
+							System.out.print("\t\t\t\t\tEnter the HexaDecimal Number : ");
+							String hexadecimal = scan.next();
+							System.out.print("\n\n\t\t\t\t\tResult : ");
+							long decimal = hexadeci.toDecimal(hexadecimal);
+							System.out.println("\t\t(" + hexadecimal + ")16 : (" + decimal + ")10");
+							break;
+						}
+						case 4:
+						{
+							System.out.println("\t\t\t\t#$#$#$#$#$#$#$# YOU ARE ENTERING INTO PREVIOUS MENU #$#$#$#$#$#$#$# ");
+							break;
+						}
+						default:
+							System.out.println("\n\n\t\t\t\t\tWrong Choise");
+					}
+				}while(ch != 4);
+				
 				
 			}else if(choise == 5) {
 				System.out.println("\n\n\t\t\t\t#$#$#$#$#$#$#$# Bye Bye #$#$#$#$#$#$#$# ");
